@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>For Moupriya ❤️</title>
+
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            min-height:100vh;
+            overflow-x:hidden;
+
+            font-family:
+                Georgia,
+                "Noto Serif Bengali",
+                serif;
+
+            color:white;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    #542044 0%,
+                    transparent 35%
+                ),
+                linear-gradient(
+                    180deg,
+                    #09020d,
+                    #180817,
+                    #08020c
+                );
+        }
+
+
+        /* =========================
+           BACKGROUND GLOW
+        ========================= */
+
+        .background-glow{
+
+            position:fixed;
+
+            width:500px;
+            height:500px;
+
+            left:50%;
+            top:40%;
+
+            transform:
+                translate(-50%,-50%);
+
+            background:#c94b8c;
+
+            filter:blur(180px);
+
+            opacity:.12;
+
+            pointer-events:none;
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .heart{
+
+            position:fixed;
+
+            bottom:-50px;
+
+            color:#ff7eae;
+
+            font-size:20px;
+
+            opacity:.5;
+
+            animation:
+                floatHeart
+                linear
+                infinite;
+
+            pointer-events:none;
+        }
+
+        .heart:nth-child(1){
+            left:8%;
+            animation-duration:9s;
+        }
+
+        .heart:nth-child(2){
+            left:25%;
+            animation-duration:12s;
+            animation-delay:2s;
+        }
+
+        .heart:nth-child(3){
+            left:48%;
+            animation-duration:10s;
+            animation-delay:4s;
+        }
+
+        .heart:nth-child(4){
+            left:70%;
+            animation-duration:13s;
+            animation-delay:1s;
+        }
+
+        .heart:nth-child(5){
+            left:88%;
+            animation-duration:11s;
+            animation-delay:3s;
+        }
+
+
+        @keyframes floatHeart{
+
+            0%{
+                transform:
+                    translateY(0)
+                    scale(.7);
+
+                opacity:0;
+            }
+
+            20%{
+                opacity:.5;
+            }
+
+            100%{
+                transform:
+                    translateY(-110vh)
+                    rotate(30deg)
+                    scale(1.3);
+
+                opacity:0;
+            }
+        }
+
+
+        /* =========================
+           MUSIC BUTTON
+        ========================= */
+
+        .music-btn{
+
+            position:fixed;
+
+            top:20px;
+            right:20px;
+
+            z-index:1000;
+
+            border:
+                1px solid #ffffff30;
+
+            background:#ffffff12;
+
+            backdrop-filter:blur(12px);
+
+            color:white;
+
+            padding:
+                11px 17px;
+
+            border-radius:30px;
+
+            cursor:pointer;
+
+            font-size:13px;
+
+            transition:.3s;
+        }
+
+        .music-btn:hover{
+
+            background:#ffffff22;
+
+            transform:scale(1.05);
+        }
+
+
+        /* =========================
+           PART 1
+        ========================= */
+
+        .part1{
+
+            min-height:100vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            padding:
+                40px 20px;
+
+            position:relative;
+        }
+
+
+        .content{
+
+            width:
+                min(700px,95%);
+
+            text-align:center;
+
+            position:relative;
+
+            z-index:10;
+        }
+
+
+        .label{
+
+            font-size:12px;
+
+            letter-spacing:4px;
+
+            color:#d7a8c0;
+
+            margin-bottom:22px;
+        }
+
+
+        h1{
+
+            font-size:
+                clamp(42px,9vw,78px);
+
+            font-weight:normal;
+
+            line-height:1.1;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff,
+                    #ffb5d1,
+                    #d987b2
+                );
+
+            -webkit-background-clip:text;
+
+            -webkit-text-fill-color:transparent;
+
+            margin-bottom:20px;
+        }
+
+
+        .subtitle{
+
+            color:#d9c9d5;
+
+            font-size:17px;
+
+            line-height:1.9;
+
+            margin-bottom:35px;
+        }
+
+
+        /* =========================
+           ENVELOPE
+        ========================= */
+
+        .envelope-area{
+
+            display:flex;
+
+            justify-content:center;
+
+            margin:35px 0;
+        }
+
+
+        .envelope{
+
+            width:250px;
+
+            height:165px;
+
+            position:relative;
+
+            cursor:pointer;
+
+            transition:.5s;
+        }
+
+
+        .envelope:hover{
+
+            transform:
+                translateY(-8px)
+                scale(1.03);
+        }
+
+
+        .envelope-body{
+
+            position:absolute;
+
+            inset:0;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #8d315f,
+                    #4d1839
+                );
+
+            border-radius:8px;
+
+            box-shadow:
+                0 25px 60px #0009;
+
+            overflow:hidden;
+        }
+
+
+        .envelope-body::before{
+
+            content:"";
+
+            position:absolute;
+
+            left:0;
+            bottom:0;
+
+            width:0;
+            height:0;
+
+            border-left:
+                125px solid transparent;
+
+            border-right:
+                125px solid transparent;
+
+            border-bottom:
+                90px solid #6b2349;
+        }
+
+
+        .flap{
+
+            position:absolute;
+
+            top:0;
+            left:0;
+
+            width:0;
+            height:0;
+
+            border-left:
+                125px solid transparent;
+
+            border-right:
+                125px solid transparent;
+
+            border-top:
+                95px solid #a84770;
+
+            transform-origin:top;
+
+            transition:.8s;
+
+            z-index:5;
+        }
+
+
+        .envelope-heart{
+
+            position:absolute;
+
+            left:50%;
+            top:52%;
+
+            transform:
+                translate(-50%,-50%);
+
+            font-size:38px;
+
+            z-index:10;
+
+            filter:
+                drop-shadow(
+                    0 5px 10px #0008
+                );
+        }
+
+
+        .envelope.open .flap{
+
+            transform:
+                rotateX(180deg);
+        }
+
+
+        /* =========================
+           LETTER
+        ========================= */
+
+        .letter{
+
+            max-height:0;
+
+            overflow:hidden;
+
+            opacity:0;
+
+            transition:
+                max-height 1.2s ease,
+                opacity .8s ease;
+
+            margin-top:10px;
+        }
+
+
+        .letter.show{
+
+            max-height:700px;
+
+            opacity:1;
+        }
+
+
+        .letter-box{
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #fffafc,
+                    #f5e6ee
+                );
+
+            color:#421b31;
+
+            padding:
+                35px 30px;
+
+            border-radius:18px;
+
+            box-shadow:
+                0 30px 80px #0009;
+
+            text-align:left;
+
+            line-height:2;
+
+            font-size:16px;
+
+            position:relative;
+        }
+
+
+        .letter-box::before{
+
+            content:"";
+
+            position:absolute;
+
+            inset:8px;
+
+            border:
+                1px solid #c985a4;
+
+            border-radius:12px;
+
+            pointer-events:none;
+        }
+
+
+        .letter-box p{
+
+            position:relative;
+
+            z-index:2;
+
+            margin-bottom:15px;
+        }
+
+
+        .signature{
+
+            text-align:right;
+
+            font-size:20px;
+
+            margin-top:20px;
+
+            color:#8d315f;
+        }
+
+
+        /* =========================
+           CONTINUE BUTTON
+        ========================= */
+
+        .continue-btn{
+
+            margin-top:30px;
+
+            padding:
+                14px 30px;
+
+            border:none;
+
+            border-radius:40px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d05289,
+                    #814a9d
+                );
+
+            color:white;
+
+            font-size:15px;
+
+            cursor:pointer;
+
+            box-shadow:
+                0 10px 30px #0006;
+
+            transition:.3s;
+        }
+
+
+        .continue-btn:hover{
+
+            transform:
+                translateY(-4px)
+                scale(1.03);
+
+            box-shadow:
+                0 15px 40px #0008;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width:600px){
+
+            .music-btn{
+
+                top:12px;
+                right:12px;
+
+                font-size:11px;
+
+                padding:
+                    9px 13px;
+            }
+
+
+            .label{
+
+                letter-spacing:3px;
+
+                font-size:10px;
+            }
+
+
+            .subtitle{
+
+                font-size:15px;
+            }
+
+
+            .envelope{
+
+                transform:scale(.88);
+            }
+
+
+            .letter-box{
+
+                padding:
+                    28px 22px;
+
+                font-size:15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACKGROUND
+    ========================= -->
+
+    <div class="background-glow"></div>
+
+
+    <!-- Floating Hearts -->
+
+    <div class="heart">❤️</div>
+    <div class="heart">💕</div>
+    <div class="heart">♡</div>
+    <div class="heart">💗</div>
+    <div class="heart">❤️</div>
+
+
+    <!-- =========================
+         RAABTA MUSIC
+    ========================= -->
+
+    <audio
+        id="bgMusic"
+        loop
+        preload="auto">
+
+        <source
+            src="raabta.mp3"
+            type="audio/mpeg">
+
+        Your browser does not support
+        the audio element.
+
+    </audio>
+
+
+    <button
+        class="music-btn"
+        id="musicBtn">
+
+        🎵 Raabta
+
+    </button>
+
+
+    <!-- =========================
+         PART 1
+    ========================= -->
+
+    <section
+        class="part1"
+        id="part1">
+
+
+        <div class="content">
+
+
+            <div class="label">
+
+                TWO MONTHS • ONE STORY • US
+
+            </div>
+
+
+            <h1>
+
+                For You,<br>
+
+                Moupriya ❤️
+
+            </h1>
+
+
+            <p class="subtitle">
+
+                কিছু গল্প লেখা হয় কলম দিয়ে...<br>
+
+                আর কিছু গল্প লেখা হয়
+                অনুভূতি দিয়ে। ❤️
+
+                <br><br>
+
+                আমাদের গল্পটা আমার কাছে
+                ঠিক তেমনই একটা গল্প।
+
+            </p>
+
+
+            <!-- =========================
+                 ENVELOPE
+            ========================= -->
+
+            <div class="envelope-area">
+
+
+                <div
+                    class="envelope"
+                    id="envelope">
+
+
+                    <div
+                        class="envelope-body">
+                    </div>
+
+
+                    <div
+                        class="flap">
+                    </div>
+
+
+                    <div
+                        class="envelope-heart">
+
+                        ❤️
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <p
+                style="
+                    color:#bdaabd;
+                    font-size:13px;
+                ">
+
+                ✨ চিঠিটা খুলতে
+                envelope-এ click করো ✨
+
+            </p>
+
+
+            <!-- =========================
+                 LETTER
+            ========================= -->
+
+            <div
+                class="letter"
+                id="letter">
+
+
+                <div class="letter-box">
+
+
+                    <p>
+
+                        প্রিয় Moupriya,
+
+                    </p>
+
+
+                    <p>
+
+                        জানি না ঠিক কোন মুহূর্ত থেকে
+                        তুমি আমার কাছে এতটা special হয়ে
+                        উঠলে। শুধু জানি, এখন আমার
+                        প্রতিদিনের ছোট ছোট ভাবনার
+                        মধ্যে তোমার জন্য একটা জায়গা
+                        থাকেই।
+
+                    </p>
+
+
+                    <p>
+
+                        আমাদের এই দুই মাস হয়তো
+                        পৃথিবীর কাছে খুব ছোট একটা
+                        সময়...
+                        কিন্তু আমার কাছে এই সময়ের
+                        প্রতিটা মুহূর্ত অনেক মূল্যবান।
+
+                    </p>
+
+
+                    <p>
+
+                        তোমার সাথে কথা বলা,
+                        তোমার হাসি শোনা,
+                        তোমার অভিমান,
+                        তোমার ছোট ছোট care—
+                        সবকিছু মিলিয়ে তুমি আমার
+                        দিনের একটা সুন্দর অংশ হয়ে
+                        গেছো। ❤️
+
+                    </p>
+
+
+                    <p>
+
+                        আজ শুধু anniversary celebrate
+                        করার জন্য এই ছোট্ট জায়গাটা
+                        বানাইনি...
+                        তোমাকে একটা কথা মনে করিয়ে
+                        দেওয়ার জন্য বানিয়েছি—
+
+                    </p>
+
+
+                    <p>
+
+                        <b>
+
+                            তুমি আমার কাছে সত্যিই অনেক
+                            special। ❤️
+
+                        </b>
+
+                    </p>
+
+
+                    <div class="signature">
+
+                        তোমারই,<br>
+
+                        ARITRA ❤️
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="continue-btn"
+                    id="nextBtn">
+
+                    Continue Our Story → ❤️
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           MUSIC
+        ========================= */
+
+        const music =
+            document.getElementById(
+                "bgMusic"
+            );
+
+
+        const musicBtn =
+            document.getElementById(
+                "musicBtn"
+            );
+
+
+        let musicStarted = false;
+
+
+        async function startMusic(){
+
+            if(musicStarted) return;
+
+
+            try{
+
+                music.volume = 0.65;
+
+                await music.play();
+
+                musicStarted = true;
+
+                musicBtn.innerHTML =
+                    "🎵 Raabta • Playing";
+
+            }
+
+            catch(error){
+
+                console.log(
+                    "Music waiting for user interaction"
+                );
+
+            }
+
+        }
+
+
+        /* First interaction starts music */
+
+        document.addEventListener(
+            "click",
+            startMusic,
+            {once:true}
+        );
+
+
+        /* Music button */
+
+        musicBtn.addEventListener(
+            "click",
+            async function(e){
+
+                e.stopPropagation();
+
+
+                if(!musicStarted){
+
+                    await startMusic();
+
+                    return;
+
+                }
+
+
+                if(music.paused){
+
+                    music.play();
+
+                    musicBtn.innerHTML =
+                        "🎵 Raabta • Playing";
+
+                }
+
+                else{
+
+                    music.pause();
+
+                    musicBtn.innerHTML =
+                        "🎵 Raabta • Paused";
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           ENVELOPE
+        ========================= */
+
+        const envelope =
+            document.getElementById(
+                "envelope"
+            );
+
+
+        const letter =
+            document.getElementById(
+                "letter"
+            );
+
+
+        envelope.addEventListener(
+            "click",
+            function(){
+
+                startMusic();
+
+
+                envelope.classList.toggle(
+                    "open"
+                );
+
+
+                letter.classList.toggle(
+                    "show"
+                );
+
+            }
+        );
+
+
+        /* =========================
+           NEXT PART
+        ========================= */
+
+        const nextBtn =
+            document.getElementById(
+                "nextBtn"
+            );
+
+
+        nextBtn.addEventListener(
+            "click",
+            function(){
+
+                const part2 =
+                    document.getElementById(
+                        "part2"
+                    );
+
+
+                if(part2){
+
+                    part2.scrollIntoView({
+                        behavior:"smooth"
+                    });
+
+                }
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

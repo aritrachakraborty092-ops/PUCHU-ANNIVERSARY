@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Love Jar For Moupriya ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:Georgia,"Noto Serif Bengali",serif;
+    color:white;
+
+    background:
+        radial-gradient(circle at 20% 15%,#ff709e,transparent 28%),
+        radial-gradient(circle at 85% 85%,#8b3159,transparent 30%),
+        linear-gradient(135deg,#12030a,#3c0b23,#100209);
+}
+
+/* =========================
+   BACKGROUND PARTICLES
+========================= */
+
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+.particle{
+    position:absolute;
+    color:#ffb8cd;
+    opacity:.5;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh) rotate(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:translateY(-20vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+    z-index:2;
+}
+
+.content{
+    width:100%;
+    max-width:700px;
+}
+
+.small{
+    font-family:Arial,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:11px;
+    color:#ffc5d8;
+}
+
+h1{
+    font-size:clamp(42px,8vw,75px);
+    margin:15px 0 10px;
+    text-shadow:0 0 30px #ff3d7e;
+}
+
+.subtitle{
+    color:#ffe1eb;
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+/* =========================
+   JAR
+========================= */
+
+.jar-area{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.jar{
+    position:relative;
+    width:220px;
+    height:280px;
+    cursor:pointer;
+
+    filter:
+        drop-shadow(0 25px 35px rgba(0,0,0,.5));
+
+    transition:.35s;
+}
+
+.jar:hover{
+    transform:translateY(-8px) scale(1.02);
+}
+
+.jar.shake{
+    animation:shake .55s ease;
+}
+
+@keyframes shake{
+
+    0%{transform:rotate(0)}
+
+    20%{transform:rotate(-6deg)}
+
+    40%{transform:rotate(6deg)}
+
+    60%{transform:rotate(-5deg)}
+
+    80%{transform:rotate(4deg)}
+
+    100%{transform:rotate(0)}
+}
+
+/* Jar Glass */
+
+.glass{
+    position:absolute;
+
+    left:20px;
+    right:20px;
+    bottom:0;
+    height:245px;
+
+    border:4px solid rgba(255,255,255,.55);
+
+    border-radius:
+        25px 25px 45px 45px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.15),
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.18)
+        );
+
+    backdrop-filter:blur(3px);
+
+    overflow:hidden;
+}
+
+/* Jar neck */
+
+.neck{
+    position:absolute;
+
+    width:130px;
+    height:45px;
+
+    left:45px;
+    top:15px;
+
+    border:4px solid rgba(255,255,255,.6);
+
+    border-bottom:0;
+
+    border-radius:15px 15px 0 0;
+
+    background:rgba(255,255,255,.08);
+
+    z-index:3;
+}
+
+/* Lid */
+
+.lid{
+    position:absolute;
+
+    width:145px;
+    height:22px;
+
+    left:37px;
+    top:0;
+
+    background:linear-gradient(
+        180deg,
+        #d8a8ba,
+        #9d506f
+    );
+
+    border-radius:10px;
+
+    box-shadow:
+        0 5px 10px #0005;
+
+    z-index:5;
+}
+
+/* Glass shine */
+
+.glass:before{
+    content:"";
+
+    position:absolute;
+
+    top:15px;
+    left:18px;
+
+    width:20px;
+    height:180px;
+
+    background:rgba(255,255,255,.16);
+
+    border-radius:50%;
+}
+
+/* =========================
+   NOTES INSIDE JAR
+========================= */
+
+.note{
+    position:absolute;
+
+    width:45px;
+    height:34px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#fff0b5;
+
+    color:#8a4155;
+
+    font-size:20px;
+
+    box-shadow:
+        0 4px 8px #0003;
+
+    transform:rotate(var(--rotate));
+}
+
+.note:nth-child(1){
+    left:30px;
+    bottom:30px;
+    --rotate:-12deg;
+}
+
+.note:nth-child(2){
+    left:80px;
+    bottom:25px;
+    --rotate:8deg;
+}
+
+.note:nth-child(3){
+    left:135px;
+    bottom:35px;
+    --rotate:-7deg;
+}
+
+.note:nth-child(4){
+    left:50px;
+    bottom:75px;
+    --rotate:15deg;
+}
+
+.note:nth-child(5){
+    left:110px;
+    bottom:70px;
+    --rotate:-18deg;
+}
+
+.note:nth-child(6){
+    left:155px;
+    bottom:85px;
+    --rotate:10deg;
+}
+
+.note:nth-child(7){
+    left:25px;
+    bottom:120px;
+    --rotate:5deg;
+}
+
+.note:nth-child(8){
+    left:90px;
+    bottom:125px;
+    --rotate:-10deg;
+}
+
+/* =========================
+   NOTE COUNTER
+========================= */
+
+.counter{
+    margin-top:20px;
+
+    font-family:Arial,sans-serif;
+
+    font-size:14px;
+
+    color:#ffd1df;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.popup{
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    background:rgba(10,0,8,.82);
+
+    backdrop-filter:blur(10px);
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.45s;
+
+    z-index:20;
+}
+
+.popup.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.note-card{
+    width:min(550px,95%);
+
+    padding:40px 30px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff9f2,
+            #ffe1eb
+        );
+
+    color:#551d34;
+
+    text-align:center;
+
+    box-shadow:
+        0 25px 80px #0009;
+
+    transform:
+        translateY(30px)
+        scale(.85);
+
+    transition:.45s;
+}
+
+.popup.show .note-card{
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.note-icon{
+    font-size:65px;
+    margin-bottom:15px;
+}
+
+.note-card h2{
+    color:#a62555;
+    margin-bottom:15px;
+}
+
+.note-card p{
+    font-size:20px;
+    line-height:1.8;
+}
+
+.close{
+    margin-top:25px;
+
+    border:0;
+
+    background:#b82d5b;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:15px;
+}
+
+/* Final */
+
+.final{
+    display:none;
+
+    margin-top:25px;
+
+    padding:15px 25px;
+
+    border:1px solid #ff9fbb;
+
+    border-radius:30px;
+
+    background:#ffffff12;
+
+    color:#ffd3df;
+
+    cursor:pointer;
+}
+
+.final.show{
+    display:inline-block;
+}
+
+@media(max-width:500px){
+
+    body{
+        overflow:auto;
+    }
+
+    .container{
+        padding:45px 15px;
+    }
+
+    .jar{
+        transform:scale(.9);
+    }
+
+    .jar:hover{
+        transform:scale(.93);
+    }
+
+    .note-card{
+        padding:30px 20px;
+    }
+
+    .note-card p{
+        font-size:17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="particles" id="particles"></div>
+
+<div class="container">
+
+<div class="content">
+
+<div class="small">
+A Jar Full Of Love
+</div>
+
+<h1>For Moupriya 🫙</h1>
+
+<p class="subtitle">
+এই ছোট্ট jar-এর ভিতরে তোমার জন্য কিছু কথা লুকিয়ে রেখেছি...
+<br>
+একটা একটা করে খুলে দেখো। ❤️
+</p>
+
+
+<div class="jar-area">
+
+<div class="jar" id="jar">
+
+<div class="lid"></div>
+
+<div class="neck"></div>
+
+<div class="glass">
+
+<div class="note">❤️</div>
+<div class="note">💗</div>
+<div class="note">💕</div>
+<div class="note">💖</div>
+<div class="note">💞</div>
+<div class="note">❤️</div>
+<div class="note">💓</div>
+<div class="note">💘</div>
+
+</div>
+
+</div>
+
+<div class="counter" id="counter">
+Tap the jar to open a love note
+</div>
+
+<button class="final" id="final">
+শেষ secret message খুলবে? ♾️
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Popup -->
+
+<div class="popup" id="popup">
+
+<div class="note-card">
+
+<div class="note-icon">
+💌
+</div>
+
+<h2 id="noteTitle">
+For My Moupriya
+</h2>
+
+<p id="noteText"></p>
+
+<button class="close" id="close">
+আরেকটা খুলবো ❤️
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   LOVE NOTES
+========================= */
+
+const notes=[
+
+"তোমার একটা হাসি আমার পুরো দিনটা সুন্দর করে দিতে পারে। ❤️",
+
+"তুমি আমার কাছে শুধু একজন মানুষ নও, তুমি আমার একটা অনুভূতি। 💗",
+
+"তোমার সাথে কথা বলার জন্য কোনো special reason লাগে না—তুমি নিজেই আমার reason। 💕",
+
+"তোমাকে যত বেশি চিনছি, তত বেশি তোমাকে ভালোবেসে ফেলছি। 💖",
+
+"দূরত্ব আমাদের আলাদা জায়গায় রাখে, কিন্তু আমার হৃদয় থেকে তোমাকে একটুও দূরে রাখতে পারে না। 🌍❤️",
+
+"তোমার নামটা আমার phone screen-এ দেখলেই মুখে হাসি চলে আসে। 🥰",
+
+"আমি চাই আমাদের আজকের ছোট্ট গল্পটা একদিন একটা সুন্দর lifetime story হয়ে উঠুক। ♾️",
+
+"যদি আবার কাউকে বেছে নেওয়ার সুযোগ পাই, আমি আবারও তোমাকেই বেছে নেব। ❤️"
+
+];
+
+let current=0;
+
+
+/* Elements */
+
+const jar=document.getElementById("jar");
+
+const popup=document.getElementById("popup");
+
+const noteText=document.getElementById("noteText");
+
+const close=document.getElementById("close");
+
+const counter=document.getElementById("counter");
+
+const final=document.getElementById("final");
+
+
+/* =========================
+   OPEN NOTE
+========================= */
+
+jar.addEventListener("click",()=>{
+
+    if(current>=notes.length){
+        return;
+    }
+
+    jar.classList.remove("shake");
+
+    /* Restart animation */
+
+    void jar.offsetWidth;
+
+    jar.classList.add("shake");
+
+    noteText.textContent=notes[current];
+
+    popup.classList.add("show");
+
+    current++;
+
+    counter.textContent=
+        `${current} / ${notes.length} love notes discovered ❤️`;
+
+});
+
+
+/* =========================
+   CLOSE
+========================= */
+
+close.addEventListener("click",()=>{
+
+    popup.classList.remove("show");
+
+    if(current>=notes.length){
+
+        counter.textContent=
+            "সবগুলো love note তুমি খুঁজে পেয়েছো! ❤️";
+
+        final.classList.add("show");
+
+    }
+
+});
+
+
+/* Click outside */
+
+popup.addEventListener("click",(e)=>{
+
+    if(e.target===popup){
+        popup.classList.remove("show");
+    }
+
+});
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+final.addEventListener("click",()=>{
+
+    noteText.textContent=
+    "Moupriya, এই jar-এর সবগুলো note শেষ হয়ে যেতে পারে... কিন্তু তোমার জন্য আমার ভালোবাসার note কখনো শেষ হবে না। তুমি আমার আজ, আমার আগামীকাল, আর আমার সব সুন্দর স্বপ্নের একটা অংশ। ❤️♾️";
+
+    popup.classList.add("show");
+
+});
+
+
+/* =========================
+   BACKGROUND PARTICLES
+========================= */
+
+const particles=document.getElementById("particles");
+
+for(let i=0;i<30;i++){
+
+    const p=document.createElement("div");
+
+    p.className="particle";
+
+    p.textContent=
+        ["♡","♥","✦","·"][Math.floor(Math.random()*4)];
+
+    p.style.left=
+        Math.random()*100+"%";
+
+    p.style.fontSize=
+        (10+Math.random()*20)+"px";
+
+    p.style.animationDuration=
+        (5+Math.random()*7)+"s";
+
+    p.style.animationDelay=
+        Math.random()*5+"s";
+
+    particles.appendChild(p);
+}
+
+</script>
+
+</body>
+</html>

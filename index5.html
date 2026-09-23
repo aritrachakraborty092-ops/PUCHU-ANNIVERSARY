@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forever With You ♾️❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    color:#fff;
+    font-family:Georgia,"Noto Serif Bengali",serif;
+
+    background:
+        radial-gradient(circle at 50% 10%,#63284e 0%,transparent 30%),
+        radial-gradient(circle at 20% 80%,#32134a 0%,transparent 35%),
+        linear-gradient(180deg,#080311,#18071d,#27091e);
+
+    overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.glow{
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.25;
+}
+
+.glow.one{
+    background:#ff5c9a;
+    left:-150px;
+    top:20%;
+}
+
+.glow.two{
+    background:#9b5cff;
+    right:-150px;
+    bottom:10%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    padding:40px 20px;
+
+    position:relative;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.small-title{
+    font-family:Arial,sans-serif;
+    letter-spacing:6px;
+    font-size:11px;
+    color:#d9c8e9;
+    text-transform:uppercase;
+}
+
+h1{
+    font-size:clamp(55px,12vw,120px);
+    margin:15px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffd3e5,
+            #dcbcff,
+            #fff
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    background-size:300% auto;
+
+    animation:shine 5s linear infinite;
+}
+
+@keyframes shine{
+    to{
+        background-position:300% center;
+    }
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.9;
+    color:#eee2f2;
+}
+
+.infinite-heart{
+    font-size:75px;
+    margin:25px 0;
+
+    animation:
+        heartbeat 1.5s infinite,
+        glowHeart 2s infinite alternate;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.15)}
+}
+
+@keyframes glowHeart{
+    from{
+        filter:drop-shadow(0 0 8px #ff6d9e);
+    }
+    to{
+        filter:drop-shadow(0 0 35px #ff6d9e);
+    }
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+    border:0;
+    padding:15px 32px;
+    border-radius:50px;
+
+    color:white;
+    font-size:16px;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d45791,
+            #8653b5
+        );
+
+    box-shadow:0 12px 35px #b8589344;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+/* =========================
+   MEMORY SECTION
+========================= */
+
+.memories{
+    padding:90px 20px;
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.section-title{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.section-subtitle{
+    color:#d7c9df;
+    margin-bottom:45px;
+}
+
+/* Cards */
+
+.memory-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.memory{
+    position:relative;
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:#ffffff0b;
+
+    border:1px solid #ffffff20;
+
+    box-shadow:
+        0 20px 50px #00000055;
+
+    transition:.5s;
+}
+
+.memory:hover{
+    transform:
+        translateY(-10px)
+        rotate(-1deg);
+}
+
+.memory img{
+    width:100%;
+    height:330px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.6s;
+}
+
+.memory:hover img{
+    transform:scale(1.08);
+}
+
+.memory-caption{
+    padding:20px;
+    background:
+        linear-gradient(
+            transparent,
+            #100513
+        );
+}
+
+.memory-caption h3{
+    font-size:22px;
+    margin-bottom:7px;
+}
+
+.memory-caption p{
+    color:#d9cddd;
+    font-size:14px;
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter-section{
+    padding:100px 20px;
+}
+
+.letter{
+    max-width:850px;
+    margin:auto;
+
+    padding:50px 40px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff12,
+            #ffffff05
+        );
+
+    border:1px solid #ffffff20;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 30px 80px #00000055;
+}
+
+.letter h2{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:30px;
+}
+
+.letter-text{
+    color:#f3e8f3;
+    font-size:18px;
+    line-height:2.1;
+}
+
+.highlight{
+    color:#ffb9d4;
+}
+
+/* =========================
+   PROMISE
+========================= */
+
+.promise-section{
+    min-height:80vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:80px 20px;
+
+    text-align:center;
+}
+
+.promise{
+    max-width:700px;
+}
+
+.promise h2{
+    font-size:45px;
+    margin-bottom:25px;
+}
+
+.promise p{
+    font-size:19px;
+    line-height:2;
+    color:#eaddeb;
+}
+
+/* Secret button */
+
+.secret-btn{
+    margin-top:35px;
+
+    padding:16px 35px;
+
+    border-radius:50px;
+    border:1px solid #ffffff35;
+
+    background:#ffffff0d;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.secret-btn:hover{
+    background:#ff639d22;
+    box-shadow:0 0 30px #ff639d55;
+}
+
+/* =========================
+   SECRET MESSAGE
+========================= */
+
+.secret{
+    display:none;
+
+    max-width:650px;
+    margin:40px auto 0;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff639d18,
+            #a268ff18
+        );
+
+    border:1px solid #ffffff25;
+
+    animation:appear .8s ease;
+}
+
+.secret.show{
+    display:block;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.secret h3{
+    font-size:28px;
+    margin-bottom:18px;
+}
+
+.secret p{
+    font-size:18px;
+    line-height:2;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+}
+
+.final-content{
+    max-width:800px;
+}
+
+.final-heart{
+    font-size:100px;
+
+    animation:heartbeat 1.5s infinite;
+}
+
+.final h2{
+    font-size:clamp(40px,8vw,75px);
+    margin:20px 0;
+}
+
+.final p{
+    font-size:20px;
+    line-height:2;
+    color:#eadfed;
+}
+
+.signature{
+    margin-top:35px;
+
+    font-size:25px;
+
+    color:#ffbdd6;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+
+    font-size:20px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    animation:floatHeart 9s linear infinite;
+}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            rotate(30deg);
+
+        opacity:0;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:750px){
+
+    .memory-grid{
+        grid-template-columns:1fr;
+    }
+
+    .memory img{
+        height:380px;
+    }
+
+    .letter{
+        padding:35px 22px;
+    }
+
+    .letter-text{
+        font-size:17px;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    .promise h2{
+        font-size:37px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+</div>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+    <div class="small-title">
+        Two Months • One Beautiful Story
+    </div>
+
+    <div class="infinite-heart">
+        ❤️
+    </div>
+
+    <h1>Forever</h1>
+
+    <p>
+        দুটো মাস হয়তো আমাদের গল্পের খুব ছোট্ট একটা অংশ...
+        <br>
+        কিন্তু আমি চাই এই গল্পটা এখানেই শেষ না হোক। ♾️
+    </p>
+
+    <br>
+
+    <button class="btn"
+            onclick="document.getElementById('memories').scrollIntoView()">
+        আমাদের Memories দেখো ❤️
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MEMORIES
+========================= -->
+
+<section class="memories" id="memories">
+
+    <h2 class="section-title">
+        আমাদের কিছু মুহূর্ত 📸
+    </h2>
+
+    <p class="section-subtitle">
+        কিছু ছবি... কিছু স্মৃতি... আর তার থেকেও বেশি কিছু অনুভূতি। ❤️
+    </p>
+
+
+    <div class="memory-grid">
+
+        <div class="memory">
+
+            <img src="IMG-20260813-WA0014.jpg"
+                 alt="Our Memory 1">
+
+            <div class="memory-caption">
+
+                <h3>একটা সুন্দর মুহূর্ত ❤️</h3>
+
+                <p>
+                    তোমাকে দেখলেই কেন জানি
+                    আমার মনটা একটু বেশি ভালো হয়ে যায়।
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="memory">
+
+            <img src="IMG-20260824-WA0024.jpg"
+                 alt="Our Memory 2">
+
+            <div class="memory-caption">
+
+                <h3>তুমি আর আমি 💕</h3>
+
+                <p>
+                    ছবিটা একটা মুহূর্ত ধরে রাখে,
+                    কিন্তু অনুভূতিটা থেকে যায়।
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="memory">
+
+            <img src="IMG-20260819-WA0024.jpg"
+                 alt="Our Memory 3">
+
+            <div class="memory-caption">
+
+                <h3>আমাদের গল্প ♾️</h3>
+
+                <p>
+                    আরও অনেক memories
+                    একসাথে তৈরি করার ইচ্ছে আছে।
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOVE LETTER
+========================= -->
+
+<section class="letter-section">
+
+<div class="letter">
+
+    <h2>
+        মৌপ্রিয়ার জন্য... 💌
+    </h2>
+
+    <div class="letter-text">
+
+        <p>
+            মৌপ্রিয়া,
+        </p>
+
+        <br>
+
+        <p>
+            শুভ ২ মাসের Anniversary,
+            <span class="highlight">আমার ভালোবাসা। ❤️</span>
+        </p>
+
+        <br>
+
+        <p>
+            দুটো মাস হয়তো খুব বেশি সময় নয়,
+            কিন্তু এই সময়ের মধ্যে তুমি আমার
+            প্রতিদিনের জীবনের একটা সুন্দর অংশ
+            হয়ে গেছো।
+        </p>
+
+        <br>
+
+        <p>
+            তোমার সাথে কথা বলা,
+            তোমার হাসি শোনা,
+            তোমার অভিমান দেখা,
+            তোমার রাগ ভাঙানো—
+            এই ছোট ছোট বিষয়গুলোই
+            আমার কাছে এখন অনেক বড় হয়ে গেছে।
+        </p>
+
+        <br>
+
+        <p>
+            কখনো যদি তোমার মন খারাপ হয়,
+            মনে রেখো আমি তোমার পাশে থাকতে চাই।
+            তুমি ক্লান্ত হলে তোমার শান্তির জায়গা হতে চাই।
+            আর তুমি যখন নিজের ওপর বিশ্বাস হারিয়ে ফেলবে,
+            তখন তোমাকে মনে করিয়ে দিতে চাই—
+            <span class="highlight">“আমি আছি।”</span>
+        </p>
+
+        <br>
+
+        <p>
+            আমি জানি না ভবিষ্যতে আমাদের গল্প
+            ঠিক কোথায় গিয়ে দাঁড়াবে।
+            কিন্তু আজ আমি এটুকু জানি—
+            তোমাকে আমার জীবনে পাওয়াটা
+            আমার কাছে ভীষণ সুন্দর একটা ব্যাপার।
+        </p>
+
+        <br>
+
+        <p>
+            আমি চাই আমাদের গল্পে আরও অনেক
+            হাসি থাকুক, আরও অনেক রাত জেগে কথা বলা থাকুক,
+            আরও অনেক memories থাকুক,
+            আর থাকুক একে অপরকে ধরে রাখার ইচ্ছে।
+        </p>
+
+        <br>
+
+        <p>
+            <span class="highlight">
+            আজ, আগামীকাল এবং আমাদের যতগুলো আগামীকাল
+            আসবে—সবকটাতেই তোমাকে ভালোবাসতে চাই। ❤️
+            </span>
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROMISE
+========================= -->
+
+<section class="promise-section">
+
+<div class="promise">
+
+    <h2>
+        একটা ছোট্ট Promise? 🤍
+    </h2>
+
+    <p>
+        সময় বদলাবে, দিন বদলাবে,
+        আমাদের জীবনে অনেক কিছু আসবে-যাবে।
+        <br><br>
+
+        কিন্তু আমি চাই,
+        আমরা যেন প্রতিবার সবকিছুর পরেও
+        একে অপরের কাছে ফিরে আসি।
+    </p>
+
+    <button class="secret-btn" id="secretBtn">
+        আমার শেষ কথাটা শুনবে? 💌
+    </button>
+
+
+    <div class="secret" id="secret">
+
+        <h3>
+            One Last Promise... ♾️
+        </h3>
+
+        <p>
+            তোমাকে সবসময় perfect ভালোবাসার
+            promise দিতে পারি না...
+            <br><br>
+
+            কিন্তু একটা জিনিস promise করতে পারি—
+            <br>
+
+            <strong>
+                তোমাকে বুঝতে চেষ্টা করব,
+                তোমাকে সম্মান করব,
+                তোমার পাশে থাকার চেষ্টা করব
+                এবং আমাদের গল্পটাকে
+                কখনো সহজে ছেড়ে দেব না। ❤️
+            </strong>
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FINAL PAGE
+========================= -->
+
+<section class="final">
+
+<div class="final-content">
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+    <h2>
+        To Be Continued...
+    </h2>
+
+    <p>
+        এটা আমাদের গল্পের শেষ নয়।
+        <br>
+        এটা শুধু প্রথম দুটো অধ্যায়ের শেষ।
+        <br><br>
+
+        সামনে আরও অনেক দিন,
+        আরও অনেক রাত,
+        আরও অনেক memories,
+        আরও অনেক “আমি তোমাকে ভালোবাসি”...
+        <br><br>
+
+        আর হয়তো একদিন,
+        আমরা পিছনে ফিরে তাকিয়ে বলব—
+        <br>
+
+        <strong>
+            “দেখো... আমাদের গল্পটা সত্যিই
+            অনেক দূর চলে এসেছে।” ❤️
+        </strong>
+    </p>
+
+    <div class="signature">
+        Forever Yours,<br>
+        ❤️ তোমার মানুষ
+    </div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   SECRET BUTTON
+========================= */
+
+const secretBtn =
+    document.getElementById("secretBtn");
+
+const secret =
+    document.getElementById("secret");
+
+secretBtn.addEventListener("click",()=>{
+
+    secret.classList.toggle("show");
+
+    if(secret.classList.contains("show")){
+
+        secretBtn.innerHTML =
+            "তাহলে এটা মনে রেখো... ❤️";
+
+    }else{
+
+        secretBtn.innerHTML =
+            "আমার শেষ কথাটা শুনবে? 💌";
+
+    }
+
+});
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+for(let i=0;i<25;i++){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className="heart";
+
+    heart.textContent =
+        ["❤️","💕","💗","♡","💖"][Math.floor(
+            Math.random()*5
+        )];
+
+    heart.style.left =
+        Math.random()*100+"%";
+
+    heart.style.fontSize =
+        (12+Math.random()*20)+"px";
+
+    heart.style.animationDuration =
+        (6+Math.random()*8)+"s";
+
+    heart.style.animationDelay =
+        Math.random()*8+"s";
+
+    document.body.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>

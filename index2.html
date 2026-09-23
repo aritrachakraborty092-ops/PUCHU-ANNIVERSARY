@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Rose Garden 🌹</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:Georgia,"Noto Serif Bengali",serif;
+    color:white;
+
+    background:
+        radial-gradient(circle at 20% 20%,#8d174b,transparent 30%),
+        radial-gradient(circle at 80% 80%,#3b1044,transparent 35%),
+        linear-gradient(135deg,#09020b,#260719,#09020b);
+}
+
+/* Stars */
+
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    opacity:.7;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;transform:scale(.7)}
+    to{opacity:1;transform:scale(1.4)}
+}
+
+/* Main */
+
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+    z-index:2;
+}
+
+.content{
+    width:100%;
+    max-width:900px;
+}
+
+.small{
+    font-family:Arial,sans-serif;
+    letter-spacing:5px;
+    font-size:11px;
+    color:#ffc4d9;
+    text-transform:uppercase;
+}
+
+h1{
+    font-size:clamp(42px,8vw,75px);
+    margin:15px 0 10px;
+    text-shadow:0 0 30px #ff3f80;
+}
+
+.subtitle{
+    color:#ffdce8;
+    font-size:18px;
+    margin-bottom:35px;
+}
+
+/* Garden */
+
+.garden{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+/* Rose */
+
+.rose-box{
+    position:relative;
+    width:120px;
+    height:190px;
+    cursor:pointer;
+}
+
+.rose{
+    position:absolute;
+    top:5px;
+    left:50%;
+    transform:translateX(-50%) scale(.65);
+    font-size:70px;
+    filter:drop-shadow(0 0 15px #ff4f82);
+    transition:1s;
+}
+
+.rose-box:hover .rose{
+    transform:translateX(-50%) scale(.78);
+}
+
+.rose-box.bloom .rose{
+    transform:translateX(-50%) scale(1.05);
+}
+
+/* Stem */
+
+.stem{
+    position:absolute;
+    width:5px;
+    height:100px;
+    background:#4c9a5d;
+    left:50%;
+    top:75px;
+    transform:translateX(-50%);
+    border-radius:10px;
+}
+
+.leaf{
+    position:absolute;
+    width:38px;
+    height:17px;
+    background:#438451;
+    border-radius:100% 0 100% 0;
+    top:125px;
+    left:43px;
+    transform:rotate(-25deg);
+}
+
+.leaf.two{
+    left:40px;
+    top:150px;
+    transform:rotate(25deg) scaleX(-1);
+}
+
+.hint{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    color:#ffcbd9;
+}
+
+/* Message */
+
+.message{
+    position:fixed;
+    inset:0;
+    background:#080108dd;
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    opacity:0;
+    pointer-events:none;
+    transition:.5s;
+    z-index:10;
+}
+
+.message.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.message-card{
+    width:min(550px,95%);
+    background:linear-gradient(145deg,#fff7fa,#ffe3ec);
+    color:#551d34;
+    padding:35px;
+    border-radius:28px;
+    text-align:center;
+    box-shadow:0 25px 80px #0009;
+    transform:translateY(30px) scale(.9);
+    transition:.5s;
+}
+
+.message.show .message-card{
+    transform:translateY(0) scale(1);
+}
+
+.big-heart{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.message-card h2{
+    color:#a52252;
+    margin-bottom:15px;
+}
+
+.message-card p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.close{
+    margin-top:22px;
+    border:0;
+    background:#b92d5c;
+    color:white;
+    padding:12px 25px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+/* Bottom */
+
+.bottom{
+    margin-top:30px;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    color:#ffc9d9;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    body{
+        overflow:auto;
+    }
+
+    .container{
+        min-height:100vh;
+        padding:50px 15px;
+    }
+
+    .garden{
+        gap:5px;
+    }
+
+    .rose-box{
+        width:95px;
+        height:160px;
+    }
+
+    .rose{
+        font-size:58px;
+    }
+
+    .message-card{
+        padding:25px 20px;
+    }
+
+    .message-card p{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="container">
+
+    <div class="content">
+
+        <div class="small">
+            A Garden Made For You
+        </div>
+
+        <h1>Moupriya 🌹</h1>
+
+        <p class="subtitle">
+            বাগানের প্রতিটা গোলাপের মধ্যে তোমার জন্য একটা করে কথা লুকিয়ে আছে... ❤️
+        </p>
+
+        <div class="garden">
+
+            <!-- Rose 1 -->
+            <div class="rose-box" data-message="তোমার হাসিটা আমার সবচেয়ে প্রিয় দৃশ্য। তুমি হাসলে আমার মনটাও আপনাআপনি ভালো হয়ে যায়। ❤️">
+                <div class="rose">🌹</div>
+                <div class="stem"></div>
+                <div class="leaf"></div>
+                <div class="leaf two"></div>
+                <div class="hint">Touch me 🌹</div>
+            </div>
+
+            <!-- Rose 2 -->
+            <div class="rose-box" data-message="তুমি আমার জীবনের এমন একজন মানুষ, যাকে হারানোর কথা ভাবলেও মনটা ভয় পেয়ে যায়। তাই থেকে যেও। 🥺❤️">
+                <div class="rose">🌹</div>
+                <div class="stem"></div>
+                <div class="leaf"></div>
+                <div class="leaf two"></div>
+                <div class="hint">Touch me 🌹</div>
+            </div>
+
+            <!-- Rose 3 -->
+            <div class="rose-box" data-message="দূরত্ব যতই থাকুক, আমার মনের সবচেয়ে কাছের মানুষটা তুমি। 🌍❤️">
+                <div class="rose">🌹</div>
+                <div class="stem"></div>
+                <div class="leaf"></div>
+                <div class="leaf two"></div>
+                <div class="hint">Touch me 🌹</div>
+            </div>
+
+            <!-- Rose 4 -->
+            <div class="rose-box" data-message="তোমার সাথে আমার গল্পটা আমি শুধু আজকের জন্য চাই না। আমি চাই আরও অনেক আগামীকাল তোমার সাথে কাটাতে। ♾️❤️">
+                <div class="rose">🌹</div>
+                <div class="stem"></div>
+                <div class="leaf"></div>
+                <div class="leaf two"></div>
+                <div class="hint">Touch me 🌹</div>
+            </div>
+
+            <!-- Rose 5 -->
+            <div class="rose-box" data-message="তুমি আমার কাছে শুধু ভালোবাসা নও। তুমি আমার শান্তি, আমার হাসি, আমার favourite person। ❤️">
+                <div class="rose">🌹</div>
+                <div class="stem"></div>
+                <div class="leaf"></div>
+                <div class="leaf two"></div>
+                <div class="hint">Touch me 🌹</div>
+            </div>
+
+        </div>
+
+        <div class="bottom">
+            প্রতিটা গোলাপ ফুটবে শুধু তোমার একটা touch-এ... 🌹
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Popup -->
+
+<div class="message" id="message">
+
+    <div class="message-card">
+
+        <div class="big-heart">🌹</div>
+
+        <h2>For My Moupriya ❤️</h2>
+
+        <p id="messageText"></p>
+
+        <button class="close" id="close">
+            আবার বাগানে ফিরে যাও 🌹
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* Stars */
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<80;i++){
+
+    const star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
+
+    star.style.animationDelay=Math.random()*2+"s";
+
+    stars.appendChild(star);
+}
+
+
+/* Rose interaction */
+
+const roses=document.querySelectorAll(".rose-box");
+
+const popup=document.getElementById("message");
+const messageText=document.getElementById("messageText");
+const close=document.getElementById("close");
+
+roses.forEach(rose=>{
+
+    rose.addEventListener("click",()=>{
+
+        /* Bloom */
+
+        rose.classList.add("bloom");
+
+        /* Get message */
+
+        messageText.textContent=rose.dataset.message;
+
+        /* Show popup */
+
+        setTimeout(()=>{
+            popup.classList.add("show");
+        },350);
+
+    });
+
+});
+
+
+/* Close */
+
+close.addEventListener("click",()=>{
+
+    popup.classList.remove("show");
+
+});
+
+
+/* Click outside popup */
+
+popup.addEventListener("click",(e)=>{
+
+    if(e.target===popup){
+        popup.classList.remove("show");
+    }
+
+});
+
+</script>
+
+</body>
+</html>
